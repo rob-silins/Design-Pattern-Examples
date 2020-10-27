@@ -9,9 +9,8 @@ namespace DesignPatternExamples
             //var car = new CarBuilderFacade();
             //car.BuildCar();
             //car.ShowCar();
-
-            var factory = new VehicleFactory();
-            factory.BuiltAVehicle();
+            //var factory = new VehicleFactory();
+            //factory.BuiltAVehicle();
 
             Console.ReadKey();
         }
