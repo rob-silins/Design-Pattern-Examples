@@ -6,12 +6,12 @@ namespace DesignPatternExamples
     {
          private readonly IVehicleFactoryOperations _operations;
 
-         public VehicleFactory()
-         {
-             _operations = new VehicleFactoryOperations();
-         }
-        
-        public  IVehicleMaker BuiltAVehicle()
+        public VehicleFactory()
+        {
+            _operations = new VehicleFactoryOperations();
+        }
+
+        public IVehicleMaker BuiltAVehicle()
         {
             Console.WriteLine(
                 "Hi boss! Please select what type of vehicles we will be making today?\n" +
@@ -23,7 +23,7 @@ namespace DesignPatternExamples
             
             var makeMoreVehicles = _operations.MakeAnotherVehicle();
 
-            while (makeMoreVehicles == "y")
+            while (makeMoreVehicles == 'y')
             {
                 Console.WriteLine("\nWhat are we making next ?\n");
                 carType = Console.ReadLine()?.ToLower();

@@ -3,7 +3,7 @@ using DesignPatternExamples.Car_Builder;
 
 namespace DesignPatternExamples
 {
-    public class VehicleFactoryOperations : IVehicleFactoryOperations
+    public  class VehicleFactoryOperations : IVehicleFactoryOperations
     {
         public  IVehicleMaker Validation(string carType)
         {
@@ -32,13 +32,26 @@ namespace DesignPatternExamples
             return vehicle;
         }
 
-        public  string MakeAnotherVehicle()
+        public  char MakeAnotherVehicle()
         {
             Console.WriteLine("");
             Console.WriteLine("Make another vehicle?");
             Console.WriteLine("Y for yes and N for no\n");
-            var makeMoreVehicles = Console.ReadLine();
-            return makeMoreVehicles;
+
+            var answer = '\0';
+            while (answer != 'y' && answer != 'n')
+            {
+                var makeMoreVehicles = Console.ReadKey();
+                char.TryParse(makeMoreVehicles.KeyChar.ToString(), out answer);
+                if (answer == 'n')
+                {
+                    Console.WriteLine("\nAlright, see you next time");
+                    break;
+                }
+                Console.WriteLine($"\nA '{answer}' ? Can't work with that response!");
+                Console.WriteLine(".... can you just give me a simple Y or N ?\n ");
+            }
+            return answer;
         }
     }
 }

@@ -4,6 +4,6 @@
     {
         public  IVehicleMaker Validation(string carType);
 
-        public string MakeAnotherVehicle();
+        public char MakeAnotherVehicle();
     }
 }
